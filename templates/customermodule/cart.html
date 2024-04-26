@@ -1,0 +1,46 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<!-- cart.html -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+<!-- HTML template to display cart items -->
+{% for item in cart_items %}
+    <div>
+        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+        <p>{{ item.product.name }}</p>
+        <p>{{ item.product.price }}</p>
+        <p>{{ item.quantity }}</p>
+        <button>Add Quantity</button>
+        <button>Reduce Quantity</button>
+        <button>Delete</button>
+    </div>
+{% endfor %}
+<p>Total Price: {{ total_price }}</p>
+
+  {% block body %}
+    <h1>Shopping Cart</h1>
+    <div class="cart-items">
+        {% for item in cart_items %}
+        <div class="cart-item">
+            <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+            <div class="item-details">
+                <h2>{{ item.product.name }}</h2>
+                <p>Price: ${{ item.product.price }}</p>
+                <div class="quantity-controls">
+                    <button class="decrement-btn">-</button>
+                    <input type="text" value="{{ item.quantity }}">
+                    <button class="increment-btn">+</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+ {% endblock %}
+</body>
+</html>

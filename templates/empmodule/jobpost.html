@@ -1,0 +1,64 @@
+{% extends 'navbar/empnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% block body %}
+<h1>This is job post page for employer app</h1>
+<div>
+    <div class ="container mt-5">
+        <h3>Job details Form</h3>
+        <form method="post" action="{% url 'empmodule:add_jobdetails' %}">
+            {% csrf_token %}
+                 <div class="form-group">
+                     <label for="workTitle">WorkTitle</label>
+                     <input type="text" class = "form-control" name="workTitle" id = "workTitle" placeholder="Enter the work title">
+
+                 </div>
+            <div class="form-group">
+                     <label for="salaryOffered">Salary</label>
+                     <input type="number" class = "form-control" name="salary" id = "salaryOffered" placeholder="Salary">
+
+                 </div>
+             <div class="form-group">
+                     <label for="jobType">JobType</label>
+                 <select class="form-control" name="jobType" id="jobType">
+                     <option value="fulltime">Full-Time</option>
+                     <option value="partatime">part-Time</option>
+                     <option value="selling">Selling</option>
+
+                 </select><br>
+
+                 <div class="form-control">
+<!--                     <input type="number" name="age" required>-->
+
+                     <label for="age">age</label>
+                     <input type="number" class = "form-control" name="age" id = "age" rows="1" placeholder="Enter the work age">
+                 </div>
+                 </div>
+                   <div class="form-group">
+                     <label for="requiredskills">Skills</label>
+                     <input type="text" class = "form-control" name="requiredskills" id = "requiredskills" placeholder="Enter the req skills">
+
+                 </div><br>
+
+
+                 <div class="form-control">
+                     <label for="education">education</label>
+                     <input type="text" class = "form-control" name="education" id = "education" placeholder="enter your education qualification ">
+                 </div>
+            <div><br><br></div>
+
+
+           <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form><br><br><br>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

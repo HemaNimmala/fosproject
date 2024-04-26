@@ -1,0 +1,286 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+        }
+        h1{
+            justify-content: center;
+            display: flex;
+        }
+
+        .third-con{
+        border-radius: 10px;
+        background-image: url("{% static 'images/team.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 40px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 80px;
+        padding: 40px;
+        text-align: center;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;  
+        box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+        }
+        .card-con{
+            /* display: flex; */
+            justify-content: center;
+        }
+        
+        .third-con h1{
+            font-weight: 550;
+            outline: 3px solid black;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            
+        }
+        .pdes{
+            padding: 15px;
+            width: 250px;
+            margin: 30px;
+            margin-top: 10px;
+            font-weight: 650;
+            justify-content: center;
+        }
+        .hexagonal-card {
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background-color: #ffffff; /* Set background color */
+            width: 300px;
+            height: 300px;
+        }
+        
+        .hexagonal-card img {
+            width: 100%; /* Adjust image width */
+            height: 100%; /* Maintain aspect ratio */
+            object-fit: cover;
+        }
+        .team1{
+            display:flex;
+            justify-content: center;
+            margin: 40px;
+        }
+        /* Overall container styles */
+        .community-console {
+        border-radius: 10px;
+        /* background-color: rgb(245, 104, 104); */
+        background-image: url("{% static 'images/neon.svg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+        /* box-shadow: 0 0 5px rgba(100, 100, 100, 0.3); */
+        display: flex;
+        flex-direction: column;  /* Stack content vertically */
+        justify-content: center;  /* Center content vertically within container */
+        align-items: center;  /* Center content horizontally within container */
+        min-height: 100vh;  /* Set minimum height to viewport height */
+        margin-left: 100px;
+        margin-right: 100px;
+        }
+        
+        
+        /* Inner content wrapper styles */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;  /* Stack rows vertically */
+            justify-content: center;
+            align-items: center;
+            width: 900px;  /* Adjust as needed based on desired width */
+        }
+        
+        /* Row styles */
+        .com-row1,
+        .com-row2 {
+            display: flex;
+            /* background-color:  rgb(245, 104, 104); */
+            justify-content: space-between;
+            width: 100%;  /* Span the full width of the content-wrapper */
+            height: 250px;  /* Adjust as needed based on row height */
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Box styles */
+        .box {
+            width: 33.33%;  /* Each box takes up 1/3rd of the row width */
+            height: 250px;  /* Adjust as needed */
+            background-image: url("{% static 'images/splatter.svg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;  /* Stack content vertically within boxes */
+            justify-content: center;  /* Center content vertically within boxes */
+            align-items: center;
+            text-align: center;
+            line-height: 100px;  /* Center text vertically within boxes */
+        }
+        
+        /* Title styles */
+        .title {
+            font-size: 20px;  /* Adjust font size as needed */
+            font-weight: bold;  /* Make title text bold */
+            margin-bottom: 10px;  /* Add spacing below the title */
+        }
+        
+        /* Content styles (paragraphs) */
+        p {
+            margin: 0;  /* Remove default margin */
+        }
+        .comh1{
+            outline: 3px solid black;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+            font-weight: bolder;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .com-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+
+
+    </style>
+    <h1>"About Us"</h1>
+    <div class="third-con">
+        <h1>Meet The Team</h1>
+        <div class="card-con">
+        <div class="team1">
+            <div class="hexagonal-card">
+                <img src="" class="hexagonal-card img" alt="KLU">  
+            </div>
+            <p class="pdes">Bhargav Sai - Team Lead <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, consectetur? Vero ad quidem adipisci delectus similique maiores aperiam. Facilis animi, veniam et pariatur alias iure voluptates repudiandae optio reiciendis dolorem?</p>
+        </div>
+        <div class="team1">
+            <p class="pdes">Hema - Team Member <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quos aut excepturi tenetur beatae nulla, molestiae aliquam in quis incidunt. Libero cum esse iure eligendi ipsa neque in dicta ratione.</p>
+          <div class="hexagonal-card">
+            <img src="" class="hexagonal-card img" alt="KLU">  
+          </div>
+        </div>
+        <div class="team1">
+            <div class="hexagonal-card">
+                <img src="" class="hexagonal-card img" alt="KLU">  
+              </div>
+              <p class="pdes">Shashank - Team Member <br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus animi exercitationem distinctio amet deserunt temporibus facilis placeat vel nihil magnam. Qui sint vel dolores? Dignissimos a impedit voluptates aperiam voluptate.</p>
+        </div>
+            
+          
+        </div>
+        
+      
+    </div>
+
+
+    <div class="community-console">
+        <h1 class="comh1">Our Community</h1>  <div class="content-wrapper">
+          <div class="com-row1">
+            <div class="box">
+              <h2 class="title">100+</h2>
+              <p>Employees</p>
+            </div>
+            <div class="box">
+              <h2 class="title">10000+</h2>
+              <p>Happy Customers</p>
+            </div>
+            <div class="box">
+              <h2 class="title">150+</h2>
+              <p>Integrations</p>
+            </div>
+          </div>
+          <div class="com-row2">
+            <div class="box">
+              <h2 class="title">800+</h2>
+              <p>Orders Daily</p>
+            </div>
+            <div class="box">
+              <h2 class="title">500+</h2>
+              <p>Registered Restaurants</p>
+            </div>
+            <div class="box">
+              <h2 class="title">300+</h2>
+              <p>Positive Ratings</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+
+
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Our offices</h1>
+    <h1>Subscribe to our newsletter</h1>
+    
+    {% endblock %}
+</body>
+</html>

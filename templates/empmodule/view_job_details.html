@@ -1,0 +1,38 @@
+{% extends 'navbar/empnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% for job_details in job_details_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">{{ job_details.work_title }}</h5>
+                <p class="card-title">Salary Offered:{{ job_details.salary_offered }}</p>
+                <p class="card-title">JobType:{{ job_details.get_job_type }}</p>
+                <p class="card-title">Age{{ job_details.age }}</p>
+                <p class="card-title">skills{{ job_details.skills}}</p>
+                <p class="card-title">Education:{{ job_details.education }}</p>
+
+
+
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-primary">delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+
+</div>
+
+{% endblock %}
+
+</body>
+</html>

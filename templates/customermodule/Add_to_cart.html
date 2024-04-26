@@ -1,0 +1,580 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+{% block body %}
+
+<style>
+    body {
+    margin: 0px;
+     padding: 0px;
+     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+   }
+   #logo, #sm, #entry{
+     /* border: 1px solid black; */
+     height: 90px;
+     width: 35%;
+     margin-top: 5px;
+     /* display: flex; */
+
+   }
+   #entry>div>img{
+
+       width:60px;
+       height: auto;
+   }
+   #entry{
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+   }
+
+
+   #sm img{
+     /* border: 1px solid green; */
+     height: 50%;
+     margin-top: 25px;
+     margin-left: 10px;
+
+   }
+
+   #sm a:nth-child(1){
+     margin-left: 100px;
+
+   }
+   .header{
+     /* border: 1px solid red; */
+     width: 80%;
+     height: 100px;
+     margin: auto;
+     display: flex;
+   }
+   #topp {
+    display: flex;
+    width: 1500px;
+    height: 110px;
+    margin: auto;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+  }
+  #topp > div {
+    text-align: center;
+  }
+  #h41 > h4 {
+    font-weight: bold;
+    margin-left: 150px;
+
+  }
+  #bigcontainer{
+      width: 80%;
+      padding: 20px;
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  #container {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    margin-bottom: 45px;
+    height: 45px;
+    align-content: center;
+    background-color: #f1f1f1;
+    margin-bottom: 30px;
+    border-radius:10px;
+
+  }
+  #container > div {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    font-size : 15px;
+    color: #999999;
+
+
+  }
+
+  #container > div:nth-child(1) {
+    margin-left:10px;
+
+  }
+  #container > div:nth-child(2) {
+    margin-left:325px;
+  }
+
+  #container > div:nth-child(3) {
+    margin-left:80px ;
+  }
+
+  #container > div:nth-child(4) {
+    margin-left: 80px;
+  }
+
+  #container > div:nth-child(5) {
+    margin-left: 60px;
+  }
+  #totalcontainer{
+      width: 27%;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      border-radius: 10px;
+
+      padding : 20px;
+      margin-left: 10px;
+      height: 420px;
+  }
+  #price_flex{
+      display: flex;
+      justify-content: space-between;
+  }
+  #coupon_flex{
+      display:flex;
+      justify-content: space-between;
+
+
+  }
+  /* #coupon_flex>button{
+      padding: 8px 13px 8px 13px;
+      background-color: gray;
+      border: none;
+      color: white;
+      border-radius: 10px;
+
+  } */
+  #checkout{
+      width: 100%;
+      height: 45px;
+      margin-top: 20px;
+      background-color: green;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      font-weight: bolder;
+
+  }
+  #checkout:hover{
+    background-color: rgb(97, 195, 163);
+    cursor: pointer;
+  }
+  #acceptpay{
+      width: 100%;
+      height: auto;
+      margin-top: -15px;
+
+  }
+
+#acceptpay>img{
+width: 100%;
+height: auto;
+
+
+}
+#paradis{
+    font-size: 13.6px;
+    margin-top:3px;
+}
+#cart {
+   width: auto;
+    margin: auto;
+  }
+
+  #imgCon{
+    width: 100px;
+    height: auto;
+  }
+  #imgIn{
+    width: 100%;
+  }
+  th,
+td {
+  padding: 25px;
+}
+
+/* Gautam's CSS */
+#imgCon {
+  height: 110px;
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+#imgIn {
+  height: auto;
+  width:90%;
+  padding: 15px;
+
+}
+#name {
+  font-size: 14px;
+  width: 550px;
+}
+
+/* td {
+  border: 1px solid red;
+} */
+#body > tr {
+  margin-bottom: 30px;
+}
+
+.spaceBetweenTd > td {
+  box-sizing: border-box;
+}
+#divQ {
+  display: flex;
+}
+
+.incdc {
+  height: 30px;
+  width: 30px;
+  border: 0;
+  background-color: white;
+  border: 1px solid #e9e9e9;
+  color: #081442;
+}
+#qunt {
+  margin: 0;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9e9e9;
+  color: #081442;
+  font-size: 17px;
+}
+#delete{
+  padding: 8px 13px 8px 13px;
+  border-radius: 10px;
+   color: #999999;
+   font-weight: bolder;
+   background-color: white;
+   border-color:red;
+   color:red;
+   border: 1px solid red;
+}
+#delete:hover{
+  background-color:red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#Apply{
+  padding: 8px 13px 8px 13px;
+  border-radius: 10px;
+   color: #999999;
+   font-weight: bolder;
+   background-color: white;
+   border-color:green;
+   border: 1px solid green;
+   color: green;
+
+}
+#Apply:hover{
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+#promo{
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  font-weight: bolder;
+}
+  #hovertorow:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+
+  }
+  #hovertorow:focus{
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 0px 1px;
+  }
+  #disc{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+
+  }
+  #realp{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px
+
+  }
+  #discount{
+    font-weight: 400;
+    font-size: 16px;
+    color: green;
+
+  }
+  #paradis{
+    font-size: 13px;
+  }
+  #dimag{
+    margin-right: 40px;
+    margin-top: -10px;
+
+  }#lastflex{
+    margin-top: 40px;
+    margin-right: 20px;
+  }
+
+</style>
+
+
+      <div id = "bigcontainer">
+          <div id = midcontainer>
+            <div id="container">
+
+                <div>Restaurant Name</div>
+
+                <div>Unit price</div>
+                <div>Person</div>
+                <div>Total</div>
+                <div>Operation</div>
+
+
+              </div>
+              <div id="cart">
+                <main>
+                  <table>
+                    <thead></thead>
+                    <tbody id="body"></tbody>
+                  </table>
+                </main>
+              </div>
+          </div>
+
+
+
+        <div id = "totalcontainer">
+            <h2>TOTAL</h2>
+            <hr>
+            <div id = "price_flex">
+                <h4>Sub-total :</h4>
+                <br><br><br><br>
+
+                <h3 id = "total-p"></h3>
+
+            </div>
+            <div id = "disc">
+              <h4 id = "discoun"></h4>
+              <h3 id = "discount"></h3>
+            </div>
+
+            <div id = "realp">
+              <h3 id = "realprice"></h3>
+              <h3 id =  "totalr"></h3>
+
+            </div>
+
+            <div id = "coupon_flex">
+                <input id = "promo" type = "text" placeholder = "Apply Promo">
+                <button id = "Apply">Apply</button>
+            </div>
+            <hr>
+           <a href = "payment.html"><button id = checkout>PAY NOW</button></a>
+            <h4>WE ACCEPT</h4>
+            <div id = "acceptpay">
+                <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPObq3geMYUM5tBp5bYZ4ellfEFNHuYVk-E4xVXTFOC8m2iNyjRIPwpwaKAhSt7dF9kA&usqp=CAU"
+              />
+
+            </div>
+            <p id = paradis>Got a discount code? Add it in the next step</p>
+        </div>
+
+      </div>
+
+
+
+
+{% endblock %}
+
+</body>
+</html>
+
+<script src="./js/cart.js">
+
+</script>
+<script>
+  var loginData = JSON.parse(localStorage.getItem("login"));
+  var userdata= JSON.parse(localStorage.getItem("userData"));
+  var name = userdata.userName;
+  console.log(name)
+ var user = document.querySelector("#entry");
+
+
+ if(loginData != null){
+
+ user.innerHTML = `<div id = "lastflex" style = " display: flex;
+  justify-content: space-around;  margin-top: 20px;">
+
+
+      <a><p2><img id = "dimag" src="https://www.kindmeal.my/images/icon_notice.png " alt=""> </p2></a> <p2>${name} ▼</p2>  <div>`
+      }
+
+
+
+var cartarray=JSON.parse(localStorage.getItem("cartdata"))||[]
+
+
+console.log(cartarray)
+displayData(cartarray);
+function displayData(cartarray) {
+   document.querySelector("#body").innerHTML = "";
+    cartarray.forEach(function(elem,index){
+        var row = document.createElement("tr");
+          row.setAttribute("id","hovertorow");
+        var div = document.createElement("div");
+        div.setAttribute("id","imgCon");
+
+        var img = document.createElement("img");
+        img.setAttribute("src",elem.productImg);
+        img.setAttribute("id","imgIn");
+        div.append(img);
+        var td1 = document.createElement("td");
+        td1.setAttribute("id","name");
+
+
+
+        td1.innerText = elem.productName;
+
+
+        var td2 = document.createElement("td");
+        td2.innerText = elem.Price;
+        var td3 = document.createElement("td");
+        let divQ = document.createElement("div");
+        divQ.setAttribute("id","divQ");
+
+        divQ.style.display = "flex"
+        let increase = document.createElement("button")
+         increase.addEventListener("click",function(){
+             incQuant(elem,index);
+         })
+         increase.innerText = "+";
+         increase.setAttribute("class", "incdc");
+         let qunt = document.createElement("p");
+         qunt.innerText = elem.quantity;
+         qunt.setAttribute("id","qunt");
+         let decrease = document.createElement("button");
+            decrease.addEventListener("click",function(){
+                decQuant(elem,index);
+            });
+            decrease.innerText = "-";
+            decrease.setAttribute("class","incdc");
+            divQ.append(decrease,qunt,increase);
+            td3.append(divQ);
+
+
+            var td6 = document.createElement("td");
+            var split = elem.Price.trim().split(" ");
+
+
+
+            td6.innerText = Math.floor(+split[0]*elem.quantity)+" MYR";
+             td6.setAttribute("id","totalQP");
+             var td7 = document.createElement("td");
+             let btn = document.createElement("button");
+            btn.setAttribute("id", "delete");
+            btn.innerText = "Remove";
+
+            td7.append(btn);
+            btn.addEventListener("click",function(){
+                deleteItem(index);
+            })
+            row.setAttribute("class","spaceBetweenTd");
+            row.append(div,td1,td2,td3,td6,td7);
+            document.querySelector("#body").append(row);
+    })
+}
+showTotal();
+function incQuant(elem,index){
+    document.querySelector("#qunt").innerText = elem.quantity++;
+ localStorage.setItem("cartdata",JSON.stringify(cartarray));
+ console.log(elem.quantity)
+    showTotal();
+
+    displayData(cartarray);
+}
+function decQuant(elem,index) {
+    if (elem.quantity > 1) {
+        document.querySelector("#qunt").innerText = elem.quantity--;
+    // here we have to send data to local storage
+    showTotal();
+
+} else{
+
+  document.querySelector("#qunt")[index].innerText = 1;
+ localStorage.setItem("cartdata",JSON.stringify(cartarray));
+}
+
+displayData(cartarray)
+}
+function showTotal(){
+    var total = cartarray.reduce(function(acc,ele){
+        var split = ele.Price.trim().split(" ");
+
+        return acc+ +split[0] *ele.quantity;
+    },0);
+
+    document.querySelector("#total-p").innerText = Math.floor(total) + " MYR";
+    localStorage.setItem("totalprice",total);
+    var count = 0;
+    document.querySelector("#Apply").addEventListener("click", check)
+    function check(){
+
+        var value= document.querySelector("#promo").value
+
+         if(value == "kindmeal30" ){
+             document.querySelector("#totalcontainer").style.height= "auto";
+            document.querySelector("#total-p").style.textDecoration = "line-through"
+            document.querySelector("#total-p").style.color = "gray"
+            document.querySelector("#total-p").style.fontWeight = "400"
+            count++;
+            if(count == 1){
+                var  dis = total*30/100
+                document.querySelector("#discoun").innerText = "Discount :"
+                document.querySelector("#discount").innerText = "- "+dis + " MYR";
+
+            total = total-dis
+            console.log(total)
+            document.querySelector("#realprice").innerText = "Estimated Total :";
+            document.querySelector("#totalr").innerText = Math.floor(total) + " MYR";
+
+            localStorage.setItem("totalprice",total);
+            }
+
+         }
+         else{
+            document.querySelector("#total-p").innerText = Math.floor(total) + " MYR";
+            localStorage.setItem("totalprice",total);
+         }
+    }
+
+
+    // send all the data into the local storage
+
+}
+function deleteItem(index){
+   cartarray.splice(index,1);
+        //here set the local storage
+        localStorage.setItem("cartdata", JSON.stringify(cartarray));
+      displayData(cartarray);
+      showTotal();
+    }
+
+
+
+</script>

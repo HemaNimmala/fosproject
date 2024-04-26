@@ -1,0 +1,199 @@
+{% extends 'navbar/projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>project homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body id="homepage">  
+  {% block body %}
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    }
+    body{
+      background-image: url("{% static 'images/projectbg.jpg' %}"); /* Set background image path (verify!) */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    body#homepage {  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      
+    }
+    .hero-section {
+      text-align: center; /* Center text within the section */
+      background: #fcefdb;
+      border-radius: 10px;
+      margin: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      padding: 30px;
+      justify-content: center;
+      box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+
+    }
+    .second-con{
+      border-radius: 10px;
+      background-color: rgb(225, 227, 206);
+      margin: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      padding: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+    }
+    .card {
+      width: 18rem;
+      margin: 20px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      /* Add some default shadow */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 5px solid white;
+    }
+    .card-con{
+      display: flex;
+      justify-content: center;
+    }
+    
+
+    .card-img-top {
+      width: 100%;
+      height: 200px; /* Adjust image height as needed */
+      object-fit: cover; /* Scales image to fit within container */
+    }
+    h1{
+      font-weight: bold;
+    }
+    .phero{
+      font-style: oblique;
+    }
+    .psecond{
+      font-weight: bold;
+      font-style: italic;
+    }
+    .third-con{
+      border-radius: 10px;
+      background-color: rgb(227, 206, 206);
+      margin: 40px;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 80px;
+      padding: 40px;
+      text-align: center;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;  
+      box-shadow: 0 0 5px rgba(100, 100, 100, 0.3);
+    }
+    .roundcards{
+      border-radius: 50%;
+      overflow: hidden;  /* Important for this method */
+      width: 250px;
+      height: 250px;
+      margin: 30px;
+      margin-bottom: 10px;
+      border: 5px solid white;
+    }
+    .roundcard-img-top{
+      width: 100%;  /* Ensures image fills the card */
+      height: 100%;  /* Ensures image fills the card */
+      object-fit: cover;
+    }
+    h2{
+      font-weight: bold;
+    }
+    .feedback{
+      display: flex;
+      justify-content: center;
+    }
+    .pfeed{
+      padding: 10px;
+      width: 250px;
+      margin: 30px;
+      margin-top: 10px;
+      font-weight: 650;
+      transform: translateY(5px); /* Adjust for desired elevation */
+      transition: transform 0.2s ease-in-out;
+      box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      background-color: aliceblue;
+    }
+    .pfeed:hover {
+      transform: translateY(0px); /* Div appears to "rise" on hover */
+    }
+    
+
+
+  </style>
+<div class="hero-section">
+  <h1>Indulge in Delicious Flavors</h1>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    </div>
+  <p class="phero">Explore our wide variety of dishes, prepared with fresh ingredients and authentic recipes.</p>
+  <a href="#" class="btn btn-primary">Order Now</a>
+</div>
+
+<div class="second-con">
+  <div class="card-con">
+    <div class="card" style="width: 22rem;">
+      <img src="{% static 'images/chef1.jpg' %}" class="card-img-top" alt="KLU"> 
+    </div>
+    <div class="card" style="width: 22rem;">
+      <img src="{% static 'images/chef2.jpg' %}" class="card-img-top" alt="KLU">
+    </div>
+    <div class="card" style="width: 22rem;">
+      <img src="{% static 'images/chef3.jpg' %}" class="card-img-top" alt="KLU">
+    </div>
+  </div>
+    <p class="psecond">Explore the kitchen with various chefs in the town!</p>
+</div>
+
+<div class="third-con">
+  <h2>Top reviews from our customers:</h2>
+  <div class="card-con">
+    <div class="roundcards">
+      <img src="{% static 'images/person1.jpg' %}" class="roundcard-img-top" alt="KLU">  
+    </div>
+    <div class="roundcards">
+      <img src="{% static 'images/person2.jpg' %}" class="roundcard-img-top" alt="KLU">  
+    </div>
+    <div class="roundcards">
+      <img src="{% static 'images/person3.jpg' %}" class="roundcard-img-top" alt="KLU">  
+    </div>
+    <div class="roundcards">
+      <img src="{% static 'images/person4.jpg' %}" class="roundcard-img-top" alt="KLU">  
+    </div>
+  </div>
+  <div class="feedback">
+    <p class="pfeed">Sarah Jones: Great selection! Discover new places, support local. User-friendly app, helpful tracking. Minor occasional time delays.</p>
+    <p class="pfeed">Michael John: This app saves time! Order from all my favorites in a few clicks. Fast delivery, fresh food. Highly recommend!</p>
+    <p class="pfeed">William Greg: Great variety of restaurants and cuisines! User-friendly and easy to track orders.</p>
+    <p class="pfeed">Emily Garcia: Love the deals! Discounts for favorites, try new places. Excellent customer service.</p>
+  </div>
+  
+  
+  
+
+</div>
+
+
+
+
+{% endblock %}
+</body>
+</html>

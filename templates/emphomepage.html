@@ -1,0 +1,61 @@
+{% extends 'navbar/empnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>project homepage</title>
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+        .content {
+            width: 80%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+    </style>
+<body>
+
+{% block body %}
+<!--<div>-->
+<!--    <br>-->
+<!--    <h1 align="center">-->
+<!--    This is my employer homepage-->
+<!--</h1>-->
+<!--</div>-->
+
+
+
+
+
+    <div class="sidebar">
+        <!-- Sidebar content -->
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Products</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </div>
+    <div class="content">
+
+        {% endblock %}
+    </div>
+
+
+</body>
+</html>

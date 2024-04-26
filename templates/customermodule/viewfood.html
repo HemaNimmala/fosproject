@@ -1,0 +1,136 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="viewfood.css"> -->
+</head>
+<body>
+{% block body %}
+<!-- <h1>This page is to view food items</h1> -->
+<style>
+    body{
+      background-image: url("{% static 'images/vfbg.jpg' %}"); /* Set background image path (verify!) */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    /* Styles for the card container */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 10px;
+      justify-content: center;
+    }
+
+    /* Styles for each card */
+    .card {
+      width: 18rem;
+      margin: 20px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      /* Add some default shadow */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .card:hover {
+      transform: translateY(-10px); 
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      /* Increase shadow size and opacity on hover */
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 180px; /* Adjust image height as needed */
+      object-fit: cover; /* Scales image to fit within container */
+    }
+  </style>
+<div class="card-container">
+  <div class="card" style="width: 18rem;">
+      <img src="{% static 'images/southIndianVeg.jpg' %}" class="card-img-top" alt="KLU">
+    <div class="card-body">
+      <h5 class="card-title">South Indian</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Veg</h6>
+      <p class="card-text">Aromatic & Hearty South Indian Vegetarian Fare</p>
+      <a href="{% url 'southveg' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a>      <!-- <a href="#" class="card-link">Another link</a> -->
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img src="{% static 'images/southnonveg.jpg' %}" class="card-img-top" alt="KLU">
+    <div class="card-body">
+      <h5 class="card-title">South Indian</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Non-Veg</h6>
+      <p class="card-text">Savory South Indian Non-Vegetarian Delights</p>
+      <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a>    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="{% static 'images/northIndian.jpg' %}" class="card-img-top" alt="KLU">
+  <div class="card-body">
+    <h5 class="card-title">North Indian</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Veg & Non-Veg</h6>
+    <p class="card-text">A Culinary Journey Through North India</p>
+    <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a>  </div>
+</div> 
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/italian.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Italian</h5>
+  <h6 class="card-subtitle mb-2 text-body-secondary">Veg & Non-Veg</h6>
+  <p class="card-text">A Taste of the Italian Countryside</p>
+  <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a></div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/chinese.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Chinese</h5>
+  <h6 class="card-subtitle mb-2 text-body-secondary">Veg & Non-Veg</h6>
+  <p class="card-text">Experience Authentic Chinese Cuisine</p>
+  <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a></div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/fastfood.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Fast Foods</h5>
+  <h6 class="card-subtitle mb-2 text-body-secondary">Veg & Non-Veg</h6>
+  <p class="card-text">Is your food fast enough?</p>
+  <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a></div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/drinks.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Soft Drinks and Juices</h5>
+  <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+  <p class="card-text">Drinks and juices as per your occasion</p>
+  <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a></div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/desserts1.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Desserts</h5>
+  <!-- <h6 class="card-subtitle mb-2 text-body-secondary"></h6> -->
+  <p class="card-text">Desserts that satisfy your every craving</p>
+  <a href="{% url 'deserts' %}" class="card-link"><button type="button" class="btn btn-info">View More</button></a>
+</div>
+</div>
+<!-- <div class="card" style="width: 18rem;">
+  <img src="{% static 'images/index.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Card title</h5>
+  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#" class="card-link">View More</a>
+</div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/index.jpg' %}" class="card-img-top" alt="KLU">
+<div class="card-body">
+  <h5 class="card-title">Card title</h5>
+  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#" class="card-link">View More</a>
+</div>
+</div> -->
+
+</div>
+{% endblock %}
+</body>
+</html>

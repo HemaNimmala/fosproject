@@ -1,0 +1,151 @@
+{% extends 'navbar/customernavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Home Page</title>
+  <!-- <link rel="stylesheet" href="{% static 'styles.css' %}">   -->
+</head>
+<body>
+  {% block body %}
+  <style>
+    body {
+  min-height: 100vh; /* Set minimum height to viewport height */
+  background-image: url("{% static 'images/background.jpg' %}"); /* Set background image path (verify!) */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* hello */
+
+.hero {
+  padding: 50px 0; /* Top and bottom padding */
+  text-align: center; /* Center text content */
+  position: relative; /* Allow positioning relative to the body */
+  z-index: 1; /* Set a higher z-index to display content above the body background */
+  margin: 50px;
+  background-color: rgb(234, 239, 239);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.hero2 {
+  padding: 50px 0; /* Top and bottom padding */
+  text-align: center; /* Center text content */
+  position: relative; /* Allow positioning relative to the body */
+  z-index: 1; /* Set a higher z-index to display content above the body background */
+  margin: 50px;
+  background-color: rgb(68, 166, 166);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .hero-content {
+      display: flex; /* Allow elements to align horizontally */
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center content horizontally */
+      justify-content: center; /* Center content vertically within the hero section */
+      max-width: 800px; /* Limit content width */
+      margin: 0 auto; /* Center content horizontally within the viewport */
+      color: #ff2600; /* Set text color to white for better contrast over the image */
+    }
+    .hero2-content {
+      display: flex; /* Allow elements to align horizontally */
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center content horizontally */
+      justify-content: center; /* Center content vertically within the hero section */
+      max-width: 800px; /* Limit content width */
+      margin: 0 auto; /* Center content horizontally within the viewport */
+      color: #ff2600; /* Set text color to white for better contrast over the image */
+    }
+
+.hero h1 {
+  font-size: 4rem; /* Set heading font size */
+  margin-bottom: 10px; /* Add some margin below the heading */
+  font-family: Okra, sans-serif;
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 2rem; /* Set paragraph font size */
+  margin-bottom: 20px; /* Add some margin below the paragraph */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Blue button color (Bootstrap class) */
+  color: #fff; /* White text color (Bootstrap class) */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add some rounded corners */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+.card-container {
+  display: flex; /* Allow cards to arrange themselves horizontally */
+  flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+  padding: 20px; /* Add some padding for spacing */
+  /* Add styles for individual cards from previous snippets */
+}
+.card-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 10px;
+      border-radius: 20px;
+      justify-content: center;
+    }
+
+    /* Styles for each card */
+    .card {
+      width: 18rem;
+      margin: 20px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      border-radius: 20px;
+      /* Add some default shadow */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      justify-content: center;
+    }
+    .card:hover {
+      transform: translateY(-10px); 
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      /* Increase shadow size and opacity on hover */
+    }
+    .card-img-top{
+        border-radius: 20px;
+    }
+    
+
+
+
+    
+
+    
+
+/* Add any additional styles for other elements as needed */
+
+  </style>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome, {{user.username}}</h1>
+      <p>Order food from your doorstep</p>
+      <button type="button" class="btn btn-primary">
+        <a class="nav-link" href="{% url 'viewfood1' %}">Explore Our Menu</a>
+    </button>
+    </div>
+  </section>
+  <section class="hero2">
+    <div class="hero2-content">
+      
+    </button>
+    </div>
+  </section>
+
+    
+    <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Veg & Non-Veg</h6>
+    <p class="card-text">Experience Authentic Chinese Cuisine</p>
+    <a href="#" class="card-link">View More</a> -->
+    </section>
+
+  {% endblock %}
+
+</body>
+</html>
